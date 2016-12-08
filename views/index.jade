@@ -5,7 +5,8 @@ html(lang="en")
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
         link(href="/css/style.css", rel="stylesheet",type='text/css')
     body
-        |May Node and Express be with you.
+        h1    
+            |&#9875; What a beautiful table &#9875; :)
     div
         div.table-responsive
             table.table.table-bordered
@@ -18,9 +19,9 @@ html(lang="en")
                         th.text-center
                             |Surname:
                         th.text-center
-                            |email:
+                            |&#9993; Email:
                         th.text-center
-                            |age:
+                            |Age:
                         th.text-center
                             |Action:
                 tbody
@@ -32,16 +33,16 @@ html(lang="en")
                             td.text-center=item.email
                             td.text-center=item.age
                             td.text-center
-                                a.delete.btn.btn-danger(id=item._id href="#" role="button")
-                                    |Delete
-                                a.update.btn.btn-primary(id=item._id href="#" role="button")
-                                    |Edit
+                                a.delete.btn.btn-danger(id=item._id href="#"  role="button")
+                                    |&#10008; Delete
+                                a.update.btn.btn-primary(id=item._id href="#"  role="button")
+                                    |&#9998; Edit
                             
                             
     a.btn.btn-success(href="#spoiler-open-1" id="spoiler-open-1" class="trigger open")
-        |+Add
+        |&#10010; Add
     a.btn.btn-warning(href="#spoiler-close-1" id="spoiler-close-1" class="trigger close")
-        |Hide
+        |Hide form
      
     form.spoiler.form-inline(action="/quotes" method="POST")
         input.form-control(type="text" placeholder="name" name="name")
@@ -49,6 +50,6 @@ html(lang="en")
         input.form-control(type="text" placeholder="email" name="email")
         input.form-control(type="text" placeholder="age" name="age")
         button(class="btn btn-success" type="submit")
-            |Submit
+            |&#9766; Submit
     script(src="main.js")
                       

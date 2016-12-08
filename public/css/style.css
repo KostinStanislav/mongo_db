@@ -17,3 +17,15 @@
 .trigger.open:target + .trigger.close + .spoiler {    
     display: block;
 }
+h1{
+    text-align: center;
+}
+input,button{
+    margin-left: 1%;
+}
+.trigger.open{
+    margin-left: 2%;
+}
+.trigger.close{
+    margin-right: 2%;
+}

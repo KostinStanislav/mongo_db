@@ -1,8 +1,9 @@
 var update = document.getElementsByClassName('update');
 var del = document.getElementsByClassName('delete');
+//UPDATE
 for (var i=0;i<update.length;i++){
 update[i].addEventListener('click', function (event) {
-  console.log(event.target.id);
+  if (confirm("Ти добре подумав?P.S.дані в таблиці заміняться на захардкоджені,ID залишиться без змін")) {
  fetch('quotes', {
     method: 'put',
     headers: {'Content-Type': 'application/json'},
@@ -21,12 +22,16 @@ update[i].addEventListener('click', function (event) {
     console.log(data);
     window.location.reload(true);
   });
+  }else{
+  alert("Ну і не треба!");
+}
 });
 }
 
-
+//DELETE
 for (var i=0;i<del.length;i++){
 del[i].addEventListener('click', function (event) {
+ if (confirm("Впевнені що хочете видалити з бази?")) {
   fetch('quotes', {
     method: 'delete',
     headers: {
@@ -43,5 +48,7 @@ del[i].addEventListener('click', function (event) {
     console.log(data);
     window.location.reload(true);
   });
-});
+}else{
+  alert("Правильно нефіг!");
+}});
 }
