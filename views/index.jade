@@ -5,18 +5,45 @@ html(lang="en")
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
 
     body
-        May Node and Express be with you.
-
-        ul.quotes
-            each item in quotes
-                li.quote=item.name
-            each item in quotes
-                li.quote=item.quote
-             
-
-        form(action="/quotes" method="POST")
-            input(type="text" placeholder="name" name="name")
-            input(type="text" placeholder="quote" name="quote")
-            button(type="submit")
-                Submit
-          
+        'May Node and Express be with you.''
+    div
+        div.table-responsive
+            table.table.table-bordered
+                thead
+                    tr.info
+                        th.text-center
+                            "ID:"
+                        th.text-center
+                            "Name:"
+                        th.text-center
+                            "Surname:"
+                        th.text-center
+                            "email:"
+                        th.text-center
+                            "age:"
+                        th.text-center
+                            "Action:"
+                tbody
+                    each item in quotes
+                        tr.active
+                            td.text-center=item._id
+                            td.text-center=item.name
+                            td.text-center=item.surname
+                            td.text-center=item.email
+                            td.text-center=item.age
+                            td.text-center
+                                a.btn.btn-danger(href="#" role="button")
+                                    'Delete'
+                                a.btn.btn-primary(href="#" role="button")
+                                    'Edit'
+                            
+                            
+                
+    form.form-inline(action="/quotes" method="POST")
+        input.form-control(type="text" placeholder="name" name="name")
+        input.form-control(type="text" placeholder="surname" name="surname")
+        input.form-control(type="text" placeholder="email" name="email")
+        input.form-control(type="text" placeholder="age" name="age")
+        button(class="btn btn-success" type="submit")
+            'Submit'
+                  

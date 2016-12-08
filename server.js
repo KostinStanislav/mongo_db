@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser= require('body-parser');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 var db;
 MongoClient.connect('mongodb://star:staruser@ds119548.mlab.com:19548/staruser', (err, database) => {
   if (err) return console.log(err);
@@ -15,8 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', (req, res) => {
   db.collection('quotes').find().toArray((err, result) => {
     if (err) return console.log(err);
-    // renders index.ejs
-    res.render('index.ejs', {quotes: result});
+    res.render('index.jade', {quotes: result});
   });
 });
 app.post('/quotes', (req, res) => {
